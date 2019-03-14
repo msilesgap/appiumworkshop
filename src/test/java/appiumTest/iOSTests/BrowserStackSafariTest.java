@@ -23,8 +23,8 @@ import static org.junit.Assert.assertEquals;
  */
 public class BrowserStackSafariTest {
     private WebDriver driver;
-    public static final String USERNAME = "";
-    public static final String AUTOMATE_KEY = "";
+    public static final String USERNAME = "xxx";
+    public static final String AUTOMATE_KEY = "xxx";
     public static final String URL = "http://" + USERNAME + ":" + AUTOMATE_KEY + "@hub.browserstack.com/wd/hub";
 
     /**
