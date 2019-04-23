@@ -55,7 +55,6 @@ public class AndroidQuikrAppTest extends TestCase {
         LoginRegisterPage loginRegisterPage = sliderPage.clickSkipButton();
         LoginPage loginPage = loginRegisterPage.clickLoginRegisterText();
         loginPage.fillRegisterForm("test@wearegap.com", "123456");
-        loginPage.clickLoginButton();
     }
 
 }
