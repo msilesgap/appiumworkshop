@@ -18,10 +18,11 @@ import static io.appium.java_client.touch.offset.PointOption.point;
 public class AndroidQuikrAppTest extends TestCase {
 
     @Test(description = "Use the slider",
-            groups = {"android", "login", "register"})
+            groups = {"slider"})
     public void quikrSwipeGestureTest() {
-        Dimension size = appiumDriver.manage().window().getSize();
-
+        SliderPage sliderPage = getSliderPage();
+        LoginRegisterPage loginRegisterPage = sliderPage.clickSkipButton();
+        /*Dimension size = appiumDriver.manage().window().getSize();
 
         int startX = (int) (size.width * 0.90);
         int endX = (int) (size.width * 0.09);
@@ -44,7 +45,7 @@ public class AndroidQuikrAppTest extends TestCase {
             }
         }
 
-        appiumDriver.findElement(By.id("com.quikr:id/action_button_get_started")).click();
+        appiumDriver.findElement(By.id("com.quikr:id/action_button_get_started")).click();*/
     }
 
     @Test(description = "Login with Wrong user and password",

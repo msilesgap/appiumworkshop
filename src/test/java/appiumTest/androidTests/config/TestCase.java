@@ -60,7 +60,8 @@ public class TestCase {
      */
     @AfterMethod(alwaysRun = true)
     public void quitBrowser() {
-        appiumDriver.quit();
+        if(appiumDriver != null)
+            appiumDriver.quit();
         this.testClassEndTime = System.currentTimeMillis();
         long timeSeconds = TimeUnit.MILLISECONDS.toSeconds(this.testClassEndTime - this.testClassStartTime);
         Log.info("Complete; total time " + timeSeconds + " seconds.");
