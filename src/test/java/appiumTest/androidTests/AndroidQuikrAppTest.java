@@ -18,10 +18,41 @@ import static io.appium.java_client.touch.offset.PointOption.point;
 public class AndroidQuikrAppTest extends TestCase {
 
     @Test(description = "Use the slider",
-            groups = {"slider"})
+            groups = {"slider", "android"})
     public void quikrSwipeGestureTest() {
-        SliderPage sliderPage = getSliderPage();
-        LoginRegisterPage loginRegisterPage = sliderPage.clickSkipButton();
+        //SliderPage sliderPage = getSliderPage();
+        //LoginRegisterPage loginRegisterPage = sliderPage.clickSkipButton();
+        /*Dimension size = appiumDriver.manage().window().getSize();
+
+        int startX = (int) (size.width * 0.90);
+        int endX = (int) (size.width * 0.09);
+        int startY = size.height / 2;
+        int duration = 3000;
+
+        while (ActionBot.findElement(By.id("com.quikr:id/action_button_get_started")) == null) {
+            //Deprecated
+            //driver.swipe(starX, starY, endX, starY,500);
+            try {
+                new TouchAction(appiumDriver
+                ).press(point(startX, startY)).waitAction(waitOptions(Duration.ofMillis(duration)))
+                        .moveTo(point(endX, startY)).release().perform();
+                ActionBot.waitForElementVisible(By.id("com.quikr:id/action_button_get_started"), 3);
+            }catch(Exception e){
+                new TouchAction(appiumDriver
+                ).press(point(startX, startY)).waitAction(waitOptions(Duration.ofMillis(duration)))
+                        .moveTo(point(endX, startY)).release().perform();
+                ActionBot.waitForElementVisible(By.id("com.quikr:id/action_button_get_started"), 3);
+            }
+        }
+
+        appiumDriver.findElement(By.id("com.quikr:id/action_button_get_started")).click();*/
+    }
+
+    @Test(description = "Use the slider",
+            groups = {"slider", "android"})
+    public void quikrLoginValidUserTest() {
+        //SliderPage sliderPage = getSliderPage();
+        //LoginRegisterPage loginRegisterPage = sliderPage.clickSkipButton();
         /*Dimension size = appiumDriver.manage().window().getSize();
 
         int startX = (int) (size.width * 0.90);
