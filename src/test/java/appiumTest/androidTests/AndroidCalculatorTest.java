@@ -40,7 +40,7 @@ public class AndroidCalculatorTest {
     }
 
     @Test(description = "Open Calculator app",
-            groups = {"android"})
+            groups = {"calculator"})
     public void CalculatorTest() {
         driver.rotate(ScreenOrientation.LANDSCAPE);
 

@@ -1,19 +1,27 @@
 package appiumTest.androidTests;
 
 import appiumTest.androidTests.config.TestCase;
+import io.appium.java_client.TouchAction;
+import org.openqa.selenium.By;
+import org.openqa.selenium.Dimension;
 import org.testng.annotations.Test;
 import pages.quikr.login.LoginPage;
 import pages.quikr.login.LoginRegisterPage;
 import pages.quikr.slider.SliderPage;
 import utility.ActionBot;
 
+import java.time.Duration;
+
+import static io.appium.java_client.touch.WaitOptions.waitOptions;
 import static io.appium.java_client.touch.offset.PointOption.point;
 
 public class AndroidQuikrAppTest extends TestCase {
 
-    /*@Test
+    @Test(description = "Use the slider",
+            groups = {"android", "login", "register"})
     public void quikrSwipeGestureTest() {
-        Dimension size = driver.manage().window().getSize();
+        Dimension size = appiumDriver.manage().window().getSize();
+
 
         int startX = (int) (size.width * 0.90);
         int endX = (int) (size.width * 0.09);
@@ -24,20 +32,20 @@ public class AndroidQuikrAppTest extends TestCase {
             //Deprecated
             //driver.swipe(starX, starY, endX, starY,500);
             try {
-                new TouchAction(driver
+                new TouchAction(appiumDriver
                 ).press(point(startX, startY)).waitAction(waitOptions(Duration.ofMillis(duration)))
                         .moveTo(point(endX, startY)).release().perform();
                 ActionBot.waitForElementVisible(By.id("com.quikr:id/action_button_get_started"), 3);
             }catch(Exception e){
-                new TouchAction(driver
+                new TouchAction(appiumDriver
                 ).press(point(startX, startY)).waitAction(waitOptions(Duration.ofMillis(duration)))
                         .moveTo(point(endX, startY)).release().perform();
                 ActionBot.waitForElementVisible(By.id("com.quikr:id/action_button_get_started"), 3);
             }
         }
 
-        driver.findElement(By.id("com.quikr:id/action_button_get_started")).click();
-    }*/
+        appiumDriver.findElement(By.id("com.quikr:id/action_button_get_started")).click();
+    }
 
     @Test(description = "Login with Wrong user and password",
             groups = {"android", "login", "register"})
