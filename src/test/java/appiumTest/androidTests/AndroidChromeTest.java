@@ -1,18 +1,15 @@
 package appiumTest.androidTests;
 
 import io.appium.java_client.AppiumDriver;
-import io.appium.java_client.TouchAction;
 import io.appium.java_client.android.AndroidDriver;
-import io.appium.java_client.remote.MobileBrowserType;
 import io.appium.java_client.remote.MobileCapabilityType;
-import org.junit.After;
-import org.junit.Before;
-import org.junit.Test;
 import org.openqa.selenium.*;
-import org.openqa.selenium.remote.CapabilityType;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Test;
 import utility.Utils;
 
 import java.net.MalformedURLException;
@@ -23,7 +20,7 @@ import java.util.concurrent.TimeUnit;
 public class AndroidChromeTest {
     AppiumDriver driver;
 
-    @Before
+    @BeforeMethod
     public void setUp() throws MalformedURLException {
         //Set up desired capabilities and pass the Android app-activity and app-package to Appium
         DesiredCapabilities capabilities = new DesiredCapabilities();
@@ -61,7 +58,7 @@ public class AndroidChromeTest {
 
     }
 
-    @Test()
+    @Test
     public void quickrChromeTest() {
         driver.get("https://www.quickr.com");
         //Click Login Menu
@@ -73,7 +70,7 @@ public class AndroidChromeTest {
         driver.findElement(By.id("reCaptchaLoginPassword")).click();
     }
 
-    @After
+    @AfterMethod
     public void teardown() {
         //close the app
         driver.quit();

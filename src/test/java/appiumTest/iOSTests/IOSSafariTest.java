@@ -1,20 +1,22 @@
 package appiumTest.iOSTests;
 
 import io.appium.java_client.remote.MobileCapabilityType;
-import org.junit.After;
-import org.junit.Before;
-import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Test;
 import utility.Utils;
 
 import java.net.URL;
 import java.util.concurrent.TimeUnit;
-import static org.junit.Assert.*;
+import static org.testng.Assert.assertNotNull;
+import static org.testng.Assert.assertTrue;
+import static org.testng.AssertJUnit.assertEquals;
 
 /**
  *
@@ -33,7 +35,7 @@ public class IOSSafariTest {
      * 'iPhone Simulator' device and 'safari' app.
      * @throws Exception
      */
-    @Before
+    @BeforeMethod
     public void setUp() throws Exception {
         DesiredCapabilities capabilities = new DesiredCapabilities();
 
@@ -92,8 +94,8 @@ public class IOSSafariTest {
      * Closes the {@link #driver} instance.
      * @throws Exception
      */
-    @After
-    public void tearDown() throws Exception {
+    @AfterMethod
+    public void tearDown() {
         driver.quit();
     }
 }

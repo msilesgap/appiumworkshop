@@ -1,0 +1,6 @@
+<!--excluded Tests-->
+<exclude name="failed"/>
+<exclude name="duplicate"/>
+<exclude name="pending"/>
+<exclude name="excluded"/>
+

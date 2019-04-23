@@ -1,12 +1,12 @@
 package appiumTest.androidTests;
 
 import io.appium.java_client.remote.MobileCapabilityType;
-import org.junit.After;
-import org.junit.Before;
-import org.junit.Test;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Test;
 import utility.Utils;
 
 import java.net.MalformedURLException;
@@ -16,7 +16,7 @@ import java.util.concurrent.TimeUnit;
 public class AndroidYoutubeTest {
     WebDriver driver;
 
-    @Before
+    @BeforeMethod
     public void setUp() throws MalformedURLException{
         //Set up desired capabilities and pass the Android app-activity and app-package to Appium
         DesiredCapabilities capabilities = new DesiredCapabilities();
@@ -42,7 +42,7 @@ public class AndroidYoutubeTest {
         Thread.sleep (3000);
     }
 
-    @After
+    @AfterMethod
     public void teardown(){
         //close the app
         driver.quit();

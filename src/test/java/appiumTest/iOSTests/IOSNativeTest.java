@@ -2,14 +2,12 @@ package appiumTest.iOSTests;
 
 import io.appium.java_client.ios.IOSDriver;
 import io.appium.java_client.remote.MobileCapabilityType;
-import org.junit.After;
-import org.junit.Before;
-import org.junit.Rule;
-import org.junit.Test;
-import org.junit.rules.TestName;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.DesiredCapabilities;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Test;
 import utility.Utils;
 
 import java.io.File;
@@ -20,9 +18,8 @@ import java.util.concurrent.TimeUnit;
 public class IOSNativeTest {
     private IOSDriver driver;
 
-    public @Rule TestName name = new TestName();
 
-    @Before
+    @BeforeMethod
     public void setUp() throws MalformedURLException {
 
         DesiredCapabilities desiredCapabilities = new DesiredCapabilities();
@@ -66,7 +63,7 @@ public class IOSNativeTest {
         uiBackButton.click();
     }
 
-    @After
+    @AfterMethod
     public void tearDown() {
         driver.quit();
     }

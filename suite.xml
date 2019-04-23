@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd"   [
+        <!ENTITY classes SYSTEM "classes.xml">
+        <!ENTITY excludedtest SYSTEM "excluded_tests.xml">
+]>
+<suite name="Automation Test Execution" verbose="5">
+    <test name="Android Integration Tests" time-out="500000">
+        <groups>
+            <run>
+                <include name="android"/>
+                <!--excluded Tests-->
+                &excludedtest;
+            </run>
+        </groups>
+        &classes;
+    </test>
+</suite>
