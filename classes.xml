@@ -1,6 +1,7 @@
 <classes>
     <!--Android Tests-->
     <class name="appiumTest.androidTests.AndroidQuikrAppTest"/>
+    <class name="appiumTest.androidTests.AndroidCalculatorTest"/>
 
 
 

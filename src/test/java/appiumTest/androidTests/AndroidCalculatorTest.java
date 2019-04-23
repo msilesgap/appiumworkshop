@@ -7,7 +7,6 @@ import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.remote.MobileCapabilityType;
 import org.openqa.selenium.By;
 import org.openqa.selenium.ScreenOrientation;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.testng.Assert;
@@ -40,11 +39,10 @@ public class AndroidCalculatorTest {
 
     }
 
-    @Test
+    @Test(description = "Open Calculator app",
+            groups = {"android"})
     public void CalculatorTest() {
-
         driver.rotate(ScreenOrientation.LANDSCAPE);
-
 
         WebElement plus = driver.findElement(By.id("com.android.calculator2:id/op_add"));
         plus.click();
@@ -57,10 +55,8 @@ public class AndroidCalculatorTest {
         WebElement four = driver.findElement(By.id("com.android.calculator2:id/digit_4"));
         four.click();
 
-
         ActionBot.waitTime(5000);
         driver.rotate(ScreenOrientation.PORTRAIT);
-
 
         //Click the plus button
         plus.click();
